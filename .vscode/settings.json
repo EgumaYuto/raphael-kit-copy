@@ -2,5 +2,6 @@
     "C_Cpp.clang_format_style": "{BasedOnStyle: Google, IndentWidth: 4}",
     "[c]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
-      },
+    },
+    "editor.formatOnSave": true
 }

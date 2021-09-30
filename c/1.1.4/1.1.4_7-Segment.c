@@ -20,7 +20,7 @@ void hc595_shift(unsigned char dat) {
     int i;
     for (i = 0; i < 8; i++) {
         digitalWrite(SDI, 0x80 & (dat << i));
-        digitalWrite(SRCLK, 0);
+        digitalWrite(SRCLK, 1);
         delay(1);
         digitalWrite(SRCLK, 0);
     }

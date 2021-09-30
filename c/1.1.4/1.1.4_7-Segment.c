@@ -42,7 +42,7 @@ int main(void) {
         for (i = 0; i < 16; i++) {
             printf("Print %1X on Segment\n", i);
             hc595_shift(SegCode[i]);
-            delay(500);
+            delay(3000);
         }
     }
 

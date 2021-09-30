@@ -29,7 +29,7 @@ void hc595_shift(unsigned char dat) {
     digitalWrite(RCLK, 0);
 }
 
-void main(void) {
+int main(void) {
     int i;
     if (wiringPiSetup() == -1) {
         printf("setup wiringPi failed !");

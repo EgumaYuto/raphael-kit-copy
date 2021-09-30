@@ -1,6 +1,6 @@
-#include <wiringPi.h>
 #include <softPwm.h>
 #include <stdio.h>
+#include <wiringPi.h>
 #define uchar unsigned char
 #define LedPinRed 0
 #define LedPinGreen 1

@@ -16,35 +16,35 @@ int counter = 0;
 
 void pickDigit(int digit) {
     for (int i = 0; i < 4; i++) {
-        digitalWrite(placePin[i], 0);
+        digitalWrite(placePin[i], LOW);
     }
-    digitalWrite(placePin[digit], 1);
+    digitalWrite(placePin[digit], HIGH);
 }
 
 void hc595_shift(int8_t data) {
     int i;
     for (i = 0; i < 8; i++) {
         digitalWrite(SDI, 0x80 & data << i);
-        digitalWrite(SRCLK, 1);
+        digitalWrite(SRCLK, HIGH);
         delayMicroseconds(1);
-        digitalWrite(SRCLK, 0);
+        digitalWrite(SRCLK, LOW);
     }
-    digitalWrite(RCLK, 1);
+    digitalWrite(RCLK, HIGH);
     delayMicroseconds(1);
-    digitalWrite(RCLK, 0);
+    digitalWrite(RCLK, LOW);
 }
 
 void clearDisplay() {
     int i;
     for (i = 0; i < 8; i++) {
-        digitalWrite(SDI, 1);
-        digitalWrite(SRCLK, 1);
+        digitalWrite(SDI, HIGH);
+        digitalWrite(SRCLK, HIGH);
         delayMicroseconds(1);
-        digitalWrite(SRCLK, 0);
+        digitalWrite(SRCLK, LOW);
     }
-    digitalWrite(RCLK, 1);
+    digitalWrite(RCLK, HIGH);
     delayMicroseconds(1);
-    digitalWrite(RCLK, 0);
+    digitalWrite(RCLK, LOW);
 }
 
 void loop() {
